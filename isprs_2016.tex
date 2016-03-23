@@ -1,0 +1,179 @@
+\documentclass{isprs}
+\usepackage{subfigure}
+\usepackage{setspace}
+\usepackage{geometry} 
+\geometry{a4paper, top=25mm, left=20mm, right=20mm, bottom=25mm, headsep=10mm, footskip=12mm} 
+%\usepackage{enumitem}
+
+%\usepackage{isprs}
+%\usepackage[perpage,para,symbol*]{footmisc}
+
+%\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+
+
+\begin{document}
+
+\title{Tangible Landscape: Cognitively grasping the flow of water}
+
+\author{
+ B. A. Harmon\textsuperscript{a}\thanks{Corresponding author}
+ , A. Petrasova\textsuperscript{a}, V. Petras\textsuperscript{a}, H. Mitasova\textsuperscript{a}, R. K. Meentemeyer\textsuperscript{a}}
+
+\address
+{
+	\textsuperscript{a }Center for Geospatial Analytics, North Carolina State University - (baharmon, akratoc, vpetras, hmitaso, rkmeente)@ncsu.edu\\
+}
+
+\commission{}{} %This field is optional.
+\workinggroup{} %This field is optional.
+\icwg{}   %This field is optional.
+\ths{16} %ThS16
+
+\abstract
+{
+Complex spatial forms like topography can be challenging to understand, much less intentionally shape, given the heavy cognitive load of visualizing and manipulating 3D form. Spatiotemporal process like the flow of water over a landscape are even more challenging to understand and intentionally direct as they as dependent upon their context and require the simulation of forces like gravity and momentum. This cognitive work can be offloaded onto computers through 3D geospatial modeling, analysis, and simulation.
+Interacting with computers, however, can also be challenging requiring training and highly abstract thinking that adds a new cognitive burden. Tangible computing -- an emerging paradigm of human-computer interaction in which data is physically manifested so that users can feel it and directly manipulate it -- aims to offload this added cognitive work onto the body. We have designed Tangible Landscape, a tangible interface powered by an open source geographic information system (GRASS GIS), so that users can naturally shape topography and interact with simulated processes with their hands in order to make observations, generate and test hypotheses, and make inferences about scientific phenomena in a rapid, iterative process. Conceptually Tangible Landscape couples a malleable physical model with a digital model of a landscape through an continuous cycle of 3D scanning, geospatial modeling, and projection. 
+We ran a flow modeling experiment to test whether tangible interfaces like this can effectively enhance spatial performance by offloading cognitive processes onto computers and our bodies. We used hydrological simulation and spatial statistics to quantitatively assess spatial performance. We found that Tangible Landscape enhanced 3D spatial performance and elucidated the dynamics of water flow. 
+}
+
+\keywords{Embodied cognition, spatial thinking, physical processes, water flow, hydrology, tangible user interfaces, user experiment, 3D}
+
+\maketitle
+
+\section{Introduction}\label{sec:introduction}
+
+\subsection{Understanding physical processes}
+% the challenges of understanding physical processes
+Complex spatial forms and spatiotemporal processes can be challenging to understand, requiring spatial thinking across multiple scales simultaneously and the simulation of forces like gravity and momentum. Physical processes like the flow and dispersion of water are challenging to understand because they unfold in time and space, are historically contingent, are controlled by their context, and are driven by forces like gravity and momentum. The flow and dispersion of water is controlled by the morphological shape, gradient, and topology of the landscape / topography.
+
+Physical processes like the flow and dispersion of water are challenging to understand because they unfold in time and space, are historically contingent, are controlled by their context, and are driven by forces like gravity and momentum. The flow of water across a landscape is controlled by the morphological shape and gradient of the terrain. It is challenging to understand how water will flow across a landscape because one must not only understand how the shape and gradient of the terrain control the flow and dispersion of water locally, but also how water will flow between shapes and gradients – how the morphology is topologically connected. Understanding a physical process requires thinking at and across multiple spatial scales simultaneously. 
+
+% computational modeling in GIS
+This cognitive work can be offloaded onto computers through 3D geospatial modeling, analysis, and simulation. Interacting with computers, however, can also be challenging requiring training and highly abstract thinking that adds a new cognitive burden.
+
+
+\subsection{Tangible interfaces for GIS}
+
+% tangible interfaces for GIS should help to understand / cognitively grasp physical processes
+% tangible processes
+Theoretically tangible interfaces for geographic information systems should help users understand environmental processes
+by giving multidimensional data an interactive, physical form 
+so that users can explore spatiotemporal evolution.
+
+
+% tangibles
+In a seminal paper Ishii and Ullmer envisioned tangible user interfaces that would 
+`bridge the gap between cyberspace and the physical environment by making digital information (bits) tangible' \cite{Ishii1997}.
+They described `tangible bits' as `the coupling of bits with graspable physical objects' \cite{Ishii1997}. 
+
+% gis
+The aim of coupling Illuminating Clay with GRASS GIS was to 
+`explore relationships that occur between different terrains, the physical parameters of terrains, and the landscape processes that occur in these terrains' \cite{Mitasova2006}. 
+
+A tangible interface for a GIS that enables intuitive digital sculpting while providing analytical or simulated feedback would allow users to dynamically explore how topographic form influences landscape processes \cite{Mitasova2006}. 
+%
+This should be empirically tested in experiments and case studies 
+so that we can critique and develop the theory grounding Tangible Landscape, 
+identify cognitive challenges, and 
+improve the design.  
+
+% spatial scale
+With a physical model one can feel and cognitively grasp a range, albeit a limited range, of spatial scales 
+-- scales ranging from what a fingertip can touch, what a hand can grasp, what a body can reach; 
+the relationships between spatial scales within this range of motion 
+should be naturally, subconsciously understood. 
+%
+
+\paragraph{Tangible Landscape}
+
+% what is TL
+
+% how it works
+
+\cite{Petrasova2015}
+% TL Figure
+
+
+
+
+
+\section{Methods}\label{sec:methods}
+
+\subsection{Flow modeling experiment}
+
+
+
+
+
+
+
+
+
+\subsection{Implementation}
+% grass
+% simwe with equations
+
+\subsection{Analysis}
+
+\paragraph{Quantitative}
+
+\paragraph{Qualitative}
+
+\section{Results}\label{sec:results}
+
+
+
+\section{Discussion}\label{sec:discussion}
+
+
+
+\section{Conclusion}\label{sec:conclusion}
+%Finding and implications: enhanced 3D spatial performance, (reduced anxiety and mystery vs. digital 3d modeling), initial lack of understanding of water flow process, sense of touch -- elucidation / demystification of water flow process, question of added cognitive load and frustration, design and technological issues
+
+
+
+
+
+
+
+
+
+
+%Mark footnotes in the text with a number (1); use the same number for a 
+%second footnote of the paper and so on. Place footnotes at the bottom of 
+%the page, separated from the text above it by a horizontal line.
+
+%All captions should be typed in upper and lower case letters, 
+%centered directly beneath the illustration. Use single spacing if they 
+%use more than one line. All captions are to be numbered consecutively, 
+%e.g. Figure 1, Table 2, Figure 3.
+%
+%\begin{figure}[ht!]
+%\begin{center}
+%		\includegraphics[width=1.0\columnwidth]{figures/test_sites/fig1.eps}
+%	\caption{Figure placement and numbering}
+%	\label{fig:figure_placement}
+%\end{center}
+%\end{figure}
+
+%Equations should be numbered consecutively throughout the paper. The equation 
+%number is enclosed in parentheses and placed flush right. Leave one blank lines 
+%before and after equations: 
+%
+%
+%\begin{equation}\label{equ:1}
+%	x = x_0 -c \frac{X - X_0}{Z - Z_0}; y = y_0 -c \frac{Y - Y_0}{Z - Z_0}
+%\end{equation}
+%
+%\begin{tabbing} 
+%where \hspace{0.6cm} \= $c$ = focal length\\
+%\> $x,y$ = image coordinates\\
+%\> $X_0,Y_0, Z_0$ = coordinates of projection center\\
+%\> $X, Y, Z$ = object coordinates
+%\end{tabbing}
+
+\bibliography{flow} 
+\end{document}
+
+\end{document}
