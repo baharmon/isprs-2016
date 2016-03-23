@@ -3,15 +3,14 @@
 \usepackage{setspace}
 \usepackage{geometry} 
 \geometry{a4paper, top=25mm, left=20mm, right=20mm, bottom=25mm, headsep=10mm, footskip=12mm} 
-%\usepackage{enumitem}
 
 %\usepackage{isprs}
 %\usepackage[perpage,para,symbol*]{footmisc}
 
 %\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-
-
-
+\usepackage[super]{nth}
+\usepackage[inline]{enumitem}
+\usepackage{moreenum}
 \begin{document}
 
 \title{Tangible Landscape: Cognitively grasping the flow of water}
@@ -100,21 +99,68 @@ should be naturally, subconsciously understood.
 
 \section{Methods}\label{sec:methods}
 
+
+
+
 \subsection{Flow modeling experiment}
+% 2 and 6, 5 and 7
+
+
+We ran a terrain and water flow modeling experiment to study how tangible interfaces for geographic information systems mediate spatial performance. 
+%
+In the experiment participants were asked to sculpt a given landscape using different technologies -- 
+first using Vue, a triangulated irregular network (TIN)-based 3D modeling program designed for intuitive terrain sculpting, 
+and then using Tangible Landscape. 
+%
+The participants are asked to model a real landscape --
+a region of Lake Raleigh Woods 
+in Raleigh, North Carolina  -- 
+from a flat surface using each technology. 
+%We used a real landscape because 
+%computer generated landscapes look surreal, may lack distinct landforms, and may not form clear stream channels. 
+We selected a region of the landscape with distinctive, 
+clearly defined landforms -- a central ridge flanked by two stream valleys. 
+
+% FIGURE: study landscape
+
+
+%\begin{enumerate*}[label=\raisenth*] 
+%\item ...
+%\end{enumerate*}
+
+In the \nth{1} exercise 
+participans digitally sculpted the topography of the given landscape in Vue
+using a physical model as a reference. 
+%(Figure~\ref{fig:exercise_7}).
+
+In the \nth{2} exercise participants used Tangible Landscape to 
+sculpt the given landscape in polymeric sand 
+using
+simulated water flow 
+over the scanned landscape
+as a guide. 
+%
+As participants sculpted they could switch between 
+\begin{enumerate*}%[font=\bfseries]
+\item a projected map of the contours and water flow across the given landscape that they were trying to replicate
+\item and a projected map of simulated water flow across the scanned landscape that updated in near real-time.
+\end{enumerate*}
 
 
 
+% process-form interaction
+%(Figure~\ref{fig:exercise_5}).
 
 
 
-
-
+% in order to study 4D thinking
 
 \subsection{Implementation}
 % grass
 % simwe with equations
 
 \subsection{Analysis}
+% We used geospatial analytics, interviews, and observation to assess participants' spatial performance. 
 
 \paragraph{Quantitative}
 
@@ -131,7 +177,7 @@ should be naturally, subconsciously understood.
 \section{Conclusion}\label{sec:conclusion}
 %Finding and implications: enhanced 3D spatial performance, (reduced anxiety and mystery vs. digital 3d modeling), initial lack of understanding of water flow process, sense of touch -- elucidation / demystification of water flow process, question of added cognitive load and frustration, design and technological issues
 
-
+%  Tangible Landscape's water flow simulation enabled an iterative cycle of form-finding and critical assessment that helped participants to learn how form controls process. 
 
 
 
