@@ -129,24 +129,23 @@ clearly defined landforms -- a central ridge flanked by two stream valleys.
 %\end{enumerate*}
 
 In the \nth{1} exercise 
-participans digitally sculpted the topography of the given landscape in Vue
+each participant had ten minutes to digitally sculpt the topography of the given landscape in Vue
 using a physical model as a reference. 
 %(Figure~\ref{fig:exercise_7}).
 
-In the \nth{2} exercise participants used Tangible Landscape to 
-sculpt the given landscape in polymeric sand 
-using
-simulated water flow 
-over the scanned landscape
+In the \nth{2} exercise each participant had ten minutes to  
+sculpt the given landscape in polymeric sand
+using Tangible Landscape's water flow simulation
+%over the scanned landscape
 as a guide. 
 %
-As participants sculpted they could switch between 
+As participants sculpted they could switch between projected maps of either the
 \begin{enumerate*}%[font=\bfseries]
-\item a projected map of the contours and water flow across the given landscape that they were trying to replicate
-\item and a projected map of simulated water flow across the scanned landscape that updated in near real-time.
+\item simulated water flow across the given landscape that they were trying to replicate
+\item or the simulated water flow across the scanned landscape.
 \end{enumerate*}
 
-
+% FIGURE
 
 % process-form interaction
 %(Figure~\ref{fig:exercise_5}).
@@ -157,7 +156,59 @@ As participants sculpted they could switch between
 
 \subsection{Implementation}
 % grass
+...
+
 % simwe with equations
+\paragraph{Shallow overland flow}
+
+%We use a overland water flow simulation...
+
+%a landscape scale simulation model of overland flow designed for spatially variable terrain, soil, cover and rainfall excess conditions
+
+%A path sampling method is proposed for solving the continuity equations describing flows over complex landscape surfaces. 
+%The modeled quantities are represented by an ensemble of sampling points which are evolved according to the corresponding Green function.
+
+% CONTINUOUS FIELD
+% point - field duality
+
+Shallow water flow can be approximated by
+the bivariate form of the St Venant equation:
+
+\begin{equation}
+\label{eq:water}
+{\partial h({\bf r},t) \over \partial t} =
+ i_e({\bf r},t) - \nabla \cdot {\bf q}({\bf r},t)
+\end{equation}
+
+where 
+${\bf r}=(x,y)$ [m] is the position, 
+$t$ [s] is the time,
+$h({\bf r},t)$ [m] is the depth of overland flow,
+$i_e({\bf r},t)$ [m/s] is the rainfall excess = 
+(rainfall $-$ infiltration $-$ vegetation intercept) [m/s], and
+${\bf q}({\bf r},t)$ [$\rm m^2/s$] is the water flow per unit width.
+
+%  diffusion wave approximation
+We use the solution of the continuity and momentum equations for steady state water flow
+with a diffusion term $ \propto \nabla^2 [h^{5/3}({\bf r})]$ 
+that approximates diffusive wave effects 
+so that water can flow through depressions. 
+%
+\begin{equation}
+\label{eq:difwater}
+-{\varepsilon({\bf r})\over 2 }\nabla^2 [h^{5/3}({\bf r})]
++\nabla \cdot [ h({\bf r}){\bf v}({\bf r})] = i_e({\bf r})
+\end{equation}
+
+ where $\varepsilon({\bf r})$ is a spatially variable diffusion coefficient.
+
+This equation is solved using a Green's function Monte Carlo path sampling method \cite{Mitasova2004}.
+% implementation
+The overland flow hydrologic simulation using a path sampling method (SIMWE) is implemented in GRASS GIS as the module r.sim.water.
+
+ %Green's function Monte Carlo method, used to solve the equation, provides robustness necessary for spatially variable conditions and high resolutions (Mitas and Mitasova 1998). 
+
+
 
 \subsection{Analysis}
 % We used geospatial analytics, interviews, and observation to assess participants' spatial performance. 
@@ -165,6 +216,62 @@ As participants sculpted they could switch between
 \paragraph{Quantitative}
 
 \paragraph{Qualitative}
+
+
+The digital models sculpted in the \nth{1} exercise were imported into GRASS GIS as point clouds 
+and interpolated as DEMs using the regularized spline with tension interpolation method \cite{Mitasova2005}.
+
+The physical models sculpted in \nth{2} exercise were automatically 3D scanned, imported into GRASS GIS as points clouds, and interpolated as DEMs
+with Tangible Landscape. 
+
+The final state of physical models sculpted in \nth{2} exercise were 3D scanned, imported into GRASS GIS as points clouds, and interpolated as DEMs
+with Tangible Landscape . 
+
+
+
+In the \nth{1}-\nth{5} exercises the resulting physical models are 3D scanned, 
+imported into GRASS GIS as point clouds, and 
+interpolated as DEMs for analysis. 
+
+
+
+
+
+
+
+\subsection{Data collection and analysis}
+%\subsection{Quantitative data collection and analysis}
+In the \nth{1}-\nth{5} exercises the resulting physical models are 3D scanned, 
+imported into GRASS GIS as point clouds, and 
+interpolated as DEMs for analysis. 
+
+
+
+For each model I compute the elevation and its histogram 
+and bivariate scatterplot, the slope, the difference and its histogram, 
+the simulated water flow, and morphology. 
+For each exercise I compute 
+a map of the coefficient of variance of all the of DEMs,
+bivariate scatterplots of
+the covariance and correlation matrix of all the of DEMs,
+and the mean and the absolute value of the mean of the 
+differences between the the reference terrain and the modeled terrain.
+
+%\subsection{Qualitative data collection and analysis}
+%The design of the experiment was based on extensive case studies in 
+%3D modeling, geospatial modeling, and tangible interaction 
+%\cite{Tateosian2010, Petrasova2015}.  
+%During the experiment the participants creative processes
+%were observed and documented
+%with photographs and notes. 
+%Semi-structured interviews were conducted with select participants
+%after the experiment. 
+%The interviews were focused on 
+%the intuitiveness and affordances of each technology, 
+%strategies and modes of representation, 
+%participants' understanding of space in a given medium,
+%and their creative process.
+
 
 \section{Results}\label{sec:results}
 
