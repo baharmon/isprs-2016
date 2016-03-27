@@ -57,25 +57,33 @@ We ran a flow modeling experiment to test whether tangible interfaces like this 
 
 \begin{figure*}[ht!]
 \begin{center}
-		\includegraphics[width=0.3\textwidth]{figures/tl_fill_dir_1.png}
-		\includegraphics[width=0.3\textwidth]{figures/tl_fill_dir_2.png}
-		\includegraphics[width=0.3\textwidth]{figures/tl_fill_dir_3.png}
+		\includegraphics[width=0.3\textwidth]{figures/sequence_2.jpg}
+		\includegraphics[width=0.3\textwidth]{figures/sequence_3.jpg}
+		\includegraphics[width=0.3\textwidth]{figures/sequence_4.jpg}
 	\caption{Modeling the flow of water with Tangible Landscape}
 	\label{fig:tl_flow}
 \end{center}
 \end{figure*}
 
+%\begin{figure*}[ht!]
+%\begin{center}
+%		\includegraphics[width=0.225\textwidth]{figures/sequence_1.jpg}
+%		\includegraphics[width=0.225\textwidth]{figures/sequence_2.jpg}
+%		\includegraphics[width=0.225\textwidth]{figures/sequence_3.jpg}
+%		\includegraphics[width=0.225\textwidth]{figures/sequence_4.jpg}
+%	\caption{Modeling the flow of water with Tangible Landscape}
+%	\label{fig:tl_flow}
+%\end{center}
+%\end{figure*}
+
 \section{Introduction}\label{sec:introduction}
 
 \subsection{Understanding physical processes}
 % the challenges of understanding physical processes
-Complex spatial forms and spatiotemporal processes can be challenging to understand, requiring spatial thinking across multiple scales simultaneously and the simulation of forces like gravity and momentum. Physical processes like the flow and dispersion of water are challenging to understand because they unfold in time and space, are historically contingent, are controlled by their context, and are driven by forces like gravity and momentum. The flow and dispersion of water is controlled by the morphological shape, gradient, and topology of the landscape / topography.
-
-Physical processes like the flow and dispersion of water are challenging to understand because they unfold in time and space, are historically contingent, are controlled by their context, and are driven by forces like gravity and momentum. The flow of water across a landscape is controlled by the morphological shape and gradient of the terrain. It is challenging to understand how water will flow across a landscape because one must not only understand how the shape and gradient of the terrain control the flow and dispersion of water locally, but also how water will flow between shapes and gradients – how the morphology is topologically connected. Understanding a physical process requires thinking at and across multiple spatial scales simultaneously. 
+Physical processes like the flow and dispersion of water are challenging to understand because they unfold in time and space, are controlled by their context, and are driven by forces like gravity and momentum. The flow of water across a landscape is controlled by the morphological shape and gradient of the topography. It is challenging to understand how water will flow across a landscape because one must not only understand how the shape and gradient of the terrain control the flow and dispersion of water locally, but also how water will flow between shapes and gradients – how the morphology is topologically connected. Understanding a physical process requires thinking at and across multiple spatial scales simultaneously. 
 
 % computational modeling in GIS
 This cognitive work can be offloaded onto computers through 3D geospatial modeling, analysis, and simulation. Interacting with computers, however, can also be challenging requiring training and highly abstract thinking that adds a new cognitive burden.
-
 
 \subsection{Tangible interfaces for GIS}
 %
@@ -87,7 +95,7 @@ so thinking can performed subconsciously through action and extended with tools 
 %
 Tangible interfaces have been developed for geographic information systems (GIS) to ease the cognitive burden of complex spatial reasoning, spatial visualization, and human-computer interaction. 
 %
-Theoretically tangible interfaces for geographic information systems (GIS) should help users understand environmental processes
+Theoretically tangible interfaces for GIS should help users understand environmental processes
 by giving multidimensional geospatial data an interactive, physical form 
 that they can cognitively grasp and kinaesthetically explore in space and time. 
 
@@ -189,9 +197,7 @@ from a flat surface using each technology.
 We selected a region of the landscape with distinctive, 
 clearly defined landforms -- a central ridge flanked by two stream valleys 
 (See Fig.~\ref{fig:study_area}). 
-
-% FIGURE: study landscape
-
+The digital elevation model (DEM) for this region was interpolated from a 2013 airborne lidar survey using the regularized spline with tension method.
 
 %\begin{enumerate*}[label=\raisenth*] 
 %\item ...
@@ -348,6 +354,16 @@ We used Vue's terrain editor for this study because it was designed specifically
 open source 3D modeling programs like Blender (\url{https://www.blender.org/}) could be substituted for Vue. 
 %
 
+\begin{figure*}[h!]
+\begin{center}
+		\includegraphics[width=0.3\textwidth]{figures/tl_fill_dir_1.png}
+		\includegraphics[width=0.3\textwidth]{figures/tl_fill_dir_2.png}
+		\includegraphics[width=0.3\textwidth]{figures/tl_fill_dir_3.png}
+	\caption{Tangible Landscape's water flow and ponding analytics}
+	\label{fig:tl_ponding}
+\end{center}
+\end{figure*}
+
 \section{Results}\label{sec:results}
 %
 The models sculpted with Tangible Landscape more accurately replicated the water flow of the given landscape. 
@@ -392,6 +408,20 @@ Exercise & Max & Sum \\
 \label{table:depressions} 
 \end{table}
 
+% cells with depressions table
+\begin{table}[h!]
+\caption{Cells with depressions (3 m \textsuperscript{3})} 
+\vspace*{0.5em}
+\centering
+\begin{tabular}{c | c}
+Exercise & Cells\\
+\hline
+1 & 280650.623169\\
+2 & 67138.027832\\ 
+\end{tabular}
+\label{table:cells} 
+\end{table}
+
 % concentrated flow
 The models sculpted with Tangible Landscape had higher 
 mean water depths, 
@@ -417,70 +447,13 @@ whereas water flow in the \nth{2} exercise spatially fit the reference flow more
 The digitally sculpted models had higher max and summed 
 water depth in depressions (see Table~\ref{table:water_depth}).
 Furthermore the depressions covered much more area in the digitally sculpted models
-(see Fig.~\ref{fig:max_depressions}~-~\ref{fig:sum_depressions}).
+(see Table~\ref{table:cells} and Fig.~\ref{fig:max_depressions}~-~\ref{fig:sum_depressions}).
 %
 The presence of large depressions on the central ridge in the \nth{1} exercise reveals 
 concave topographic morphology where there should be convex morphology.
 %
 The pervasive presence of depressions in the stream channels in both exercises 
 reveals disrupted flows with broken continuity where water should be flowing. 
-
-\begin{figure*}
-\begin{center}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_depth_1.png}}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_depth_2.png}}
-\caption{The mean water depth of all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
-\label{fig:mean_depth}
-\end{center}
-\end{figure*}
-%
-\begin{figure*}
-\begin{center}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depth_1.png}}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depth_2.png}}
-\caption{The maximum water depth of all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
-\label{fig:max_depth}
-\end{center}
-\end{figure*}
-%
-\begin{figure*}
-\begin{center}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depth_1.png}}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depth_2.png}}
-\caption{The sum of the water depths for all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
-\label{fig:sum_depth}
-\end{center}
-\end{figure*}
-%
-\begin{figure*}
-\begin{center}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depressions_1.png}}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depressions_2.png}}
-\caption{The maximum depth of depressions for all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
-\label{fig:max_depressions}
-\end{center}
-\end{figure*}
-%
-\begin{figure*}
-\begin{center}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depressions_1.png}}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depressions_2.png}}
-\caption{The sum of the depth of depressions for all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
-\label{fig:sum_depressions}
-\end{center}
-\end{figure*}
-%
-\begin{figure*}
-\begin{center}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_diff_1.png}}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_diff_2.png}}
-\caption{The mean difference of the water depth of all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
-\label{fig:mean_diff}
-\end{center}
-\end{figure*}
-
-
-
 
 \section{Discussion}\label{sec:discussion}
 %
@@ -553,12 +526,7 @@ and thus should be a more intuitive analytic.
 %
 We propose combining shallow overland water flow with ponding in depressions
 as a near real-time analytic
-for elucidating water flow dynamics. 
-
-%% limitations
-% small sample size
-% choice of 3D modeling software
-% what to compare: digital versus hand versus tangible terrain modeling
+for elucidating water flow dynamics (Fig.~\ref{fig:tl_ponding}). 
 
 \section{Conclusion}\label{sec:conclusion}
 %
@@ -570,16 +538,65 @@ about the way that water flows over topography.
 %
 As one participant said, `seeing the flow takes away the mystery of topography.' 
 %
-%Physically manifesting topographic data coupled with simulated water flow enables users to cognitively grasp the flow of water. 
-%
 Physically manifesting topographic data enables users to cognitively grasp the terrain. 
 Coupling the tangible topography with the simulated flow of water 
 lets users understand the simulation with their body. 
 %-- partially embodying cognition about water flow. 
 
-% future research
+\begin{figure*}
+\begin{center}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_depth_1.png}}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_depth_2.png}}
+\caption{The mean water depth of all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
+\label{fig:mean_depth}
+\end{center}
+\end{figure*}
+%
+\begin{figure*}
+\begin{center}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depth_1.png}}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depth_2.png}}
+\caption{The maximum water depth of all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
+\label{fig:max_depth}
+\end{center}
+\end{figure*}
+%
+\begin{figure*}
+\begin{center}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depth_1.png}}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depth_2.png}}
+\caption{The sum of the water depths for all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
+\label{fig:sum_depth}
+\end{center}
+\end{figure*}
+%
+\begin{figure*}
+\begin{center}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depressions_1.png}}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depressions_2.png}}
+\caption{The maximum depth of depressions for all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
+\label{fig:max_depressions}
+\end{center}
+\end{figure*}
+%
+\begin{figure*}
+\begin{center}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depressions_1.png}}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depressions_2.png}}
+\caption{The sum of the depth of depressions for all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
+\label{fig:sum_depressions}
+\end{center}
+\end{figure*}
+%
+\begin{figure*}
+\begin{center}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_diff_1.png}}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_diff_2.png}}
+\caption{The mean difference of the water depth of all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
+\label{fig:mean_diff}
+\end{center}
+\end{figure*}
 
-%\pagebreak
 \bibliography{flow} 
 \end{document}
 
