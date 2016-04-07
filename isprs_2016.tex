@@ -57,24 +57,13 @@ We ran a flow modeling experiment to test whether tangible interfaces like this 
 
 \begin{figure*}[ht!]
 \begin{center}
-		\includegraphics[width=0.3\textwidth]{figures/sequence_2.jpg}
-		\includegraphics[width=0.3\textwidth]{figures/sequence_3.jpg}
-		\includegraphics[width=0.3\textwidth]{figures/sequence_4.jpg}
-	\caption{Modeling the flow of water with Tangible Landscape}
+		\includegraphics[width=0.33\textwidth]{figures/tl_sequence_1.jpg}
+		\includegraphics[width=0.33\textwidth]{figures/tl_sequence_2.jpg}
+		\includegraphics[width=0.33\textwidth]{figures/tl_sequence_3.jpg}
+	\caption{Tangibly modeling the flow of water with Tangible Landscape}
 	\label{fig:tl_flow}
 \end{center}
 \end{figure*}
-
-%\begin{figure*}[ht!]
-%\begin{center}
-%		\includegraphics[width=0.225\textwidth]{figures/sequence_1.jpg}
-%		\includegraphics[width=0.225\textwidth]{figures/sequence_2.jpg}
-%		\includegraphics[width=0.225\textwidth]{figures/sequence_3.jpg}
-%		\includegraphics[width=0.225\textwidth]{figures/sequence_4.jpg}
-%	\caption{Modeling the flow of water with Tangible Landscape}
-%	\label{fig:tl_flow}
-%\end{center}
-%\end{figure*}
 
 \section{Introduction}\label{sec:introduction}
 
@@ -118,7 +107,7 @@ The aim of coupling Illuminating Clay with GRASS GIS was to
 The effort to couple a physical landscape model with GRASS GIS led to the development of 
 the Tangible Geospatial Modeling System \cite{Tateosian2010} and Tangible Landscape (Fig.~\ref{fig:tl_flow}) \cite{Petrasova2014,Petrasova2015}.
 
-%% why
+%% WHY
 %While there are many reasons for developing tangible interfaces for GIS
 %including intuitive form-finding, 
 %streamlining analog and digital workflows, 
@@ -196,7 +185,7 @@ from a flat surface using each technology.
 %computer generated landscapes look surreal, may lack distinct landforms, and may not form clear stream channels. 
 We selected a region of the landscape with distinctive, 
 clearly defined landforms -- a central ridge flanked by two stream valleys 
-(See Fig.~\ref{fig:study_area}). 
+(see Fig.~\ref{fig:study_area}). 
 The digital elevation model (DEM) for this region was interpolated from a 2013 airborne lidar survey using the regularized spline with tension method.
 
 %\begin{enumerate*}[label=\raisenth*] 
@@ -205,15 +194,15 @@ The digital elevation model (DEM) for this region was interpolated from a 2013 a
 
 In the \nth{1} exercise 
 each participant had 10 minutes to digitally sculpt the topography of the given landscape in Vue's terrain editor
-using a physical model as a reference. 
+using a physical model as a reference (see Fig.~\ref{fig:exercises}a).
 %(Figure~\ref{fig:exercise_7}).
-Participants were given a 2 minute introduction to terrain sculpting in Vue and then 10 minutes to experiment and become familiar with the interface before beginning the exercise.
+Participants were given a 2 minute introduction to terrain sculpting in Vue and then 10 minutes to experiment and become familiar with the interface before beginning the exercise. Vue's terrain editor was designed to emulate sculpting by hand -- there are tool brushes that are analogous to basic actions in sculpture including pushing, pulling, and smoothing. 
 
 In the \nth{2} exercise each participant had ten minutes to  
 sculpt the given landscape in polymeric sand
 using Tangible Landscape's water flow simulation
 %over the scanned landscape
-as a guide. 
+as a guide (see Fig.~\ref{fig:exercises}b). 
 %
 As participants sculpted they could switch between projected maps of either the
 \begin{enumerate*}[label=\alph*),font=\itshape]
@@ -223,11 +212,20 @@ As participants sculpted they could switch between projected maps of either the
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[width=1.0\columnwidth]{figures/depth.png}
+\includegraphics[width=1.0\columnwidth]{figures/depth_3d.png}
 \caption{Our reference landscape with simulated water flow}
 \label{fig:study_area}
 \end{center}
 \end{figure}
+
+\begin{figure*}
+\begin{center}
+\subfigure[]{\includegraphics[height=150px]{figures/vue.jpg}}\hspace{1em}%
+\subfigure[]{\includegraphics[height=150px]{figures/tl_water.jpg}}
+\caption{(a) Digitally sculpting with Vue in the \nth{1} exercise and (b) tangibly sculpting in the \nth{2} exercise}
+\label{fig:exercises}
+\end{center}
+\end{figure*}
 
 \subsection{Implementation}
 % grass
@@ -292,23 +290,23 @@ This equation is solved using a Green's function Monte Carlo path sampling metho
 
 \subsection{Data collection and analysis}
 %\paragraph{Quantitative}
-We used spatial statistics to compare the results of each exercise 
+We used summary and cell-by-cell statistics to compare the results of each exercise 
 using the reference landscape as a baseline. 
-%
 The digital models sculpted in the \nth{1} exercise were manually georeferenced and imported into GRASS GIS as point clouds for modeling and analysis. 
-%
 The final state of the physical models sculpted in \nth{2} exercise were automatically 3D scanned, georeferenced, and imported into GRASS GIS as points clouds 
 with Tangible Landscape for modeling and analysis. 
-%
 All of the point clouds were randomly resampled and interpolated as DEMs using the regularized spline with tension interpolation method \cite{Mitasova2005}. 
-%
 For each model we simulated shallow overland water flow, identified depressions,
 and computed the difference between the modeled and reference water flow depth. 
+To compute the difference we subtracted the modeled values from the initial, reference values. %(difference $=$ before $-$ after). 
+We identified and computed the depth of depressions by generating a depressionless DEM and then calculating the difference by subtracting the DEM from the depressionless DEM.
+Then we computed the mean, sum, and maximum of the water depths, the depressions, and the difference in water depths for each exercise in the experiment. 
+We visually assessed the spatial pattern of water flow and continuity using these maps. 
 %
-We identified and computed the depth of depressions by generating a depressionless DEM and then finding the difference between the depressionless DEM and the DEM.
+In order to quantitatively compare how well the modeled streams matched the reference stream
+we computed the distance between cells with concentrated water flow in the reference depth map and mean of the modeled depth maps. First we extracted points for each cell with high water depth values ($>=0.05$ ft) in the reference water depth raster and the mean water depth raster for each exercise. Then we calculated the minimum distance between the reference points and the nearest points from each exercise. 
 %
-Then we computed the mean, sum, and maximum of the water depths, the depressions, and the difference between modeled and reference water flow depths for each exercise in the experiment. 
-%
+In order to quantitatively compare the continuity of flow we computed the percentage of cells with depressions for each exercise.
 
 %\paragraph{Qualitative}
 %Participants' modeling processes
@@ -354,16 +352,6 @@ We used Vue's terrain editor for this study because it was designed specifically
 open source 3D modeling programs like Blender (\url{https://www.blender.org/}) could be substituted for Vue. 
 %
 
-\begin{figure*}[h!]
-\begin{center}
-		\includegraphics[width=0.3\textwidth]{figures/tl_fill_dir_1.png}
-		\includegraphics[width=0.3\textwidth]{figures/tl_fill_dir_2.png}
-		\includegraphics[width=0.3\textwidth]{figures/tl_fill_dir_3.png}
-	\caption{Tangible Landscape's water flow and ponding analytics}
-	\label{fig:tl_ponding}
-\end{center}
-\end{figure*}
-
 \section{Results}\label{sec:results}
 %
 The models sculpted with Tangible Landscape more accurately replicated the water flow of the given landscape. 
@@ -388,10 +376,26 @@ more closely fit the distribution of water flow on the reference landscape.
 \begin{tabular}{c | c c c}
 Exercise & Mean & Max & Sum\\
 \hline
-1 & 0.213 & 1.83 & 3.6\\
-2 & 0.27 & 2.31 & 4.6\\ 
+Reference & 0.48 & 0.01 & 786.25\\
+Digital & 0.21 & 1.83 & 3.60\\
+Tangible & 0.27 & 2.31 & 4.60\\ 
 \end{tabular}
 \label{table:water_depth} 
+\end{table}
+
+% difference / distance
+\begin{table}[h!]
+\caption{The minimum distances from reference stream cells to the nearest modeled cell with concentrated flow (ft)} 
+%\caption{The mean and sum of the minimum distance  from cells with concentrated flow in the reference water depth to cells with concentrated flow in the mean water depth for each experiment (ft)} 
+\vspace*{0.5em}
+\centering
+\begin{tabular}{c | c c}
+Exercise & Mean & Sum\\
+\hline
+Digital & 21.13 & 29244\\
+Tangible & 18.59 & 25724\\ 
+\end{tabular}
+\label{table:distance} 
 \end{table}
 
 % depressions table
@@ -402,25 +406,45 @@ Exercise & Mean & Max & Sum\\
 \begin{tabular}{c | c c}
 Exercise & Max & Sum \\
 \hline
-1 & 24.5 & 53\\
-2 & 22.2 & 44\\ 
+Reference & 0.10 & 0.62\\
+Digital & 24.5 & 53\\
+Tangible & 22.2 & 44\\ 
 \end{tabular}
 \label{table:depressions} 
 \end{table}
 
 % cells with depressions table
 \begin{table}[h!]
-\caption{Cells with depressions (3 ft \textsuperscript{3})} 
+\caption{Percent of cells with depressions (3 ft \textsuperscript{2})} 
 \vspace*{0.5em}
 \centering
 \begin{tabular}{c | c}
 Exercise & Cells\\
 \hline
-1 & 280650.623169\\
-2 & 67138.027832\\ 
+Reference & 0.00\%\\
+Digital & 44.00\%\\
+Tangible & 17.66\%\\ 
 \end{tabular}
 \label{table:cells} 
 \end{table}
+
+%% difference / distance plot
+%\begin{figure}[ht!]
+%\begin{center}
+%\includegraphics[width=150px]{figures/distance.png}
+%\caption{The sum of the minimum distance from cells with high concentrated flow  ($>=$0.05 ft) in the reference to the nearest cell with high concentrated flow for the mean depth of each experiment}
+%\label{fig:distance_plot}
+%\end{center}
+%\end{figure}
+
+% cells with depressions plot
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=225px]{figures/depression_cells.png}
+\caption{Percentage of cells with depressions in (a) the reference landscape, (b) the composite of digitally modeled landscapes, (c) and the composite of tangibly modeled landscapes}
+\label{fig:depression_plot}
+\end{center}
+\end{figure}
 
 % concentrated flow
 The models sculpted with Tangible Landscape had higher 
@@ -431,23 +455,31 @@ demonstrating more concentrated flow
 (see Table~\ref{table:water_depth}).
 %
 % concentrated in stream channels
-Fig.~\ref{fig:mean_depth}~-~\ref{fig:sum_depth} 
-show that water flow in exercise 2 was
+Fig.~\ref{fig:mean_depth}
+shows that water flow in the \nth{2} exercise was
 spatially concentrated 
 in the upper stream channel, 
 the lower stream channel, 
 and the nascent swale to the right.
-%
-%Water flow in the \nth{1} exercise, however, was more spatially diffuse and dispersed. 
-%
-Fig.~\ref{fig:mean_diff} 
-shows that water flow in the \nth{1} exercise was more spatially diffuse and dispersed, 
-whereas water flow in the \nth{2} exercise spatially fit the reference flow more tightly.
 
+Furthermore the water flow across models sculpted with Tangible Landscape fit the reference more closely.
+Fig.~\ref{fig:mean_diff} and the details in Fig.~\ref{fig:detail_diff} 
+show that water flow in the \nth{1} exercise was more spatially diffuse and dispersed, 
+whereas water flow in the \nth{2} exercise fit the reference flow better.
+
+% water flow fitting
+Fig.~\ref{fig:distance_1}~-~\ref{fig:distance_2} show the how well the flow of the digitally and tangible sculpted models fit the reference flow. 
+%
+The digitally sculpted models tended to loosely fit the upper stream with fewer, more dispersed clusters of concentrated flow at further distances from the reference on average. They also tended to have very few clusters at considerable distance from the swale on the right and small, dispersed clusters that tightly fit the lower stream. 
+%
+The tangibly sculpted models, however, tended to more densely, tightly fit the upper stream and the swale on the right. 
+While the tangibly sculpted models tended to miss or misplace the lower stream channel (siting it too far southeast), overall they fit the reference flow 8.32\% better than the digitally sculpted models (see Table~\ref{table:distance}).
+
+% depressions
 The digitally sculpted models had higher max and summed 
 water depth in depressions (see Table~\ref{table:water_depth}).
-Furthermore the depressions covered much more area in the digitally sculpted models
-(see Table~\ref{table:cells} and Fig.~\ref{fig:max_depressions}~-~\ref{fig:sum_depressions}).
+%
+Furthermore the depressions covered 26.34\% more area of the digitally sculpted models than the tangibly sculpted models (see Table~\ref{table:cells}, Fig.~\ref{fig:depression_plot}, and Fig.~\ref{fig:max_depressions}).
 %
 The presence of large depressions on the central ridge in the \nth{1} exercise reveals 
 concave topographic morphology where there should be convex morphology.
@@ -457,7 +489,7 @@ reveals disrupted flows with broken continuity where water should be flowing.
 
 \section{Discussion}\label{sec:discussion}
 %
-The modeling results show that participants did not initially understand the dynamics of water flow, but learned more about the dynamics with the aid of the tangible interface.
+The modeling results show that participants did not initially understand how water flows, but learned more with the aid of the tangible interface.
 
 % digital results
 When digitally sculpting 
@@ -468,11 +500,10 @@ directing a continuous flow downstream.
 In the \nth{1} exercise participants made low points where the streams should be,
 but tended not to grade smooth slopes with appropriate curvature. 
 %
-The participants use of concave rather than convex morphology on the central ridge 
-in the \nth{1} exercise reveals that they did not understand how topographic curvature controls water flow.
+The participants use of concave rather than convex morphology on the central ridge reveals that they did not understand how topographic curvature controls water flow.
 %
-The extensive depressions distributed widely across the terrain in the \nth{1} exercise 
-also reveal that participants did not understand the importance of topographic curvature and continuity for water flow. 
+The extensive depressions distributed widely across the terrain
+demonstrate that participants did not understand the importance of topographic curvature and continuity for water flow. 
 
 % tangible results
 With the tangible interface they focused on directing water into streams,
@@ -526,7 +557,7 @@ and thus should be a more intuitive analytic.
 %
 We propose combining shallow overland water flow with ponding in depressions
 as a near real-time analytic
-for elucidating water flow dynamics (Fig.~\ref{fig:tl_ponding}). 
+for elucidating water flow dynamics. 
 
 \section{Conclusion}\label{sec:conclusion}
 %
@@ -545,55 +576,103 @@ lets users understand the simulation with their body.
 
 \begin{figure*}
 \begin{center}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_depth_1.png}}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_depth_2.png}}
-\caption{The mean water depth of all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
+\subfigure[]{\includegraphics[width=0.3\textwidth]{figures/depth.png}}
+\subfigure[]{\includegraphics[width=0.3\textwidth]{figures/mean_depth_1.png}}
+\subfigure[]{\includegraphics[width=0.3\textwidth]{figures/mean_depth_2.png}}
+\caption{(a) The depth of simulated water flow across the reference landscape, (b) the mean depth using digital modeling, (c) and the mean depth using tangible modeling}
 \label{fig:mean_depth}
 \end{center}
 \end{figure*}
 %
-\begin{figure*}
-\begin{center}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depth_1.png}}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depth_2.png}}
-\caption{The maximum water depth of all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
-\label{fig:max_depth}
-\end{center}
-\end{figure*}
+%\begin{figure*}
+%\begin{center}
+%\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depth_1.png}}
+%\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depth_2.png}}
+%\caption{The maximum water depth of all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
+%\label{fig:max_depth}
+%\end{center}
+%\end{figure*}
+%
+%\begin{figure*}
+%\begin{center}
+%\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depth_1.png}}
+%\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depth_2.png}}
+%\caption{The sum of the water depths for all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
+%\label{fig:sum_depth}
+%\end{center}
+%\end{figure*}
 %
 \begin{figure*}
 \begin{center}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depth_1.png}}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depth_2.png}}
-\caption{The sum of the water depths for all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
-\label{fig:sum_depth}
-\end{center}
-\end{figure*}
-%
-\begin{figure*}
-\begin{center}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depressions_1.png}}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/max_depressions_2.png}}
-\caption{The maximum depth of depressions for all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
+\subfigure[]{\includegraphics[width=0.3\textwidth]{figures/depressions.png}}
+\subfigure[]{\includegraphics[width=0.3\textwidth]{figures/max_depressions_1.png}}
+\subfigure[]{\includegraphics[width=0.3\textwidth]{figures/max_depressions_2.png}}
+\caption{(a) The depth of depression in the reference landscape, (b) the maximum depth of depressions using digital modeling, (c) and the maximum depth of depressions using tangible modeling}
 \label{fig:max_depressions}
 \end{center}
 \end{figure*}
 %
+%\begin{figure*}
+%\begin{center}
+%\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depressions_1.png}}
+%\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depressions_2.png}}
+%\caption{The sum of the depth of depressions for all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
+%\label{fig:sum_depressions}
+%\end{center}
+%\end{figure*}
+%
 \begin{figure*}
 \begin{center}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depressions_1.png}}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/sum_depressions_2.png}}
-\caption{The sum of the depth of depressions for all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
-\label{fig:sum_depressions}
+\subfigure[]{\includegraphics[width=0.3\textwidth]{figures/diff.png}}
+\subfigure[]{\includegraphics[width=0.3\textwidth]{figures/mean_diff_1.png}}
+\subfigure[]{\includegraphics[width=0.3\textwidth]{figures/mean_diff_2.png}}
+\caption{(a) The difference of the reference landscape, (b) the mean of digitally sculpted models, (c) and the mean of tangibly sculpted models \textit{from the reference landscape}}
+\label{fig:mean_diff}
 \end{center}
 \end{figure*}
 %
 \begin{figure*}
 \begin{center}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_diff_1.png}}
-\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_diff_2.png}}
-\caption{The mean difference of the water depth of all models in (a) the \nth{1} exercise and (b) the \nth{2} exercise}
-\label{fig:mean_diff}
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/detail_diff_1.png}}\hspace{1em}%
+\subfigure[]{\includegraphics[width=\columnwidth]{figures/detail_diff_2.png}}
+\caption{Detail of the difference of (a) the mean of digitally sculpted models and (b) the mean of tangibly sculpted models \textit{from the reference landscape}}
+\label{fig:detail_diff}
+\end{center}
+\end{figure*}
+%
+%\begin{figure*}
+%\begin{center}
+%\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_depth_detail_1.png}}\hspace{1em}
+%\subfigure[]{\includegraphics[width=\columnwidth]{figures/mean_depth_detail_2.png}}
+%\caption{Detail of the mean depth of (a) digitally sculpted models and (b) tangibly sculpted models}
+%\label{fig:detail_diff}
+%\end{center}
+%\end{figure*}
+%
+%\begin{figure*}
+%\begin{center}
+%\subfigure[]{\includegraphics[width=\columnwidth]{figures/concentrated_flow_1.png}}
+%\subfigure[]{\includegraphics[width=\columnwidth]{figures/concentrated_flow_2.png}}
+%\caption{The minimum distance from cells with high concentrated flow  ($>=$0.05 ft) in the reference to the nearest cell with high concentrated flow for the mean depth using (a) digital modeling and (b) tangible modeling}
+%\label{fig:mean_depth}
+%\end{center}
+%\end{figure*}
+%
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{figures/concentrated_flow_1.png}
+\caption{
+The lines represent the minimum distance between blue points with high concentrated flow in the reference to red points with high concentrated flow from the mean depth of digitally sculpted models.}
+\label{fig:distance_1}
+\end{center}
+\end{figure*}
+%
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{figures/concentrated_flow_2.png}
+\caption{
+The lines represent the minimum distance between blue points with high concentrated flow in the reference to red points with high concentrated flow from the mean depth of tangibly sculpted models.}
+\label{fig:distance_2}
 \end{center}
 \end{figure*}
 
