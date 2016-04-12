@@ -46,9 +46,9 @@ urlcolor=gray
 
 \abstract
 {
-Complex spatial forms like topography can be challenging to understand, much less intentionally shape, given the heavy cognitive load of visualizing and manipulating 3D form. Spatiotemporal process like the flow of water over a landscape are even more challenging to understand and intentionally direct as they as dependent upon their context and require the simulation of forces like gravity and momentum. This cognitive work can be offloaded onto computers through 3D geospatial modeling, analysis, and simulation.
-Interacting with computers, however, can also be challenging requiring training and highly abstract thinking that adds a new cognitive burden. Tangible computing -- an emerging paradigm of human-computer interaction in which data is physically manifested so that users can feel it and directly manipulate it -- aims to offload this added cognitive work onto the body. We have designed Tangible Landscape, a tangible interface powered by an open source geographic information system (GRASS GIS), so that users can naturally shape topography and interact with simulated processes with their hands in order to make observations, generate and test hypotheses, and make inferences about scientific phenomena in a rapid, iterative process. Conceptually Tangible Landscape couples a malleable physical model with a digital model of a landscape through an continuous cycle of 3D scanning, geospatial modeling, and projection. 
-We ran a flow modeling experiment to test whether tangible interfaces like this can effectively enhance spatial performance by offloading cognitive processes onto computers and our bodies. We used hydrological simulation and spatial statistics to quantitatively assess spatial performance. We found that Tangible Landscape enhanced 3D spatial performance and elucidated the dynamics of water flow. 
+Complex spatial forms like topography can be challenging to understand, much less intentionally shape, given the heavy cognitive load of visualizing and manipulating 3D form. Spatiotemporal processes like the flow of water over a landscape are even more challenging to understand and intentionally direct as they are dependent upon their context and require the simulation of forces like gravity and momentum. This cognitive work can be offloaded onto computers through 3D geospatial modeling, analysis, and simulation.
+Interacting with computers, however, can also be challenging, often requiring training and highly abstract thinking. Tangible computing -- an emerging paradigm of human-computer interaction in which data is physically manifested so that users can feel it and directly manipulate it -- aims to offload this added cognitive work onto the body. We have designed Tangible Landscape, a tangible interface powered by an open source geographic information system (GRASS GIS), so that users can naturally shape topography and interact with simulated processes with their hands in order to make observations, generate and test hypotheses, and make inferences about scientific phenomena in a rapid, iterative process. Conceptually Tangible Landscape couples a malleable physical model with a digital model of a landscape through an continuous cycle of 3D scanning, geospatial modeling, and projection. 
+We ran a flow modeling experiment to test whether tangible interfaces like this can effectively enhance spatial performance by offloading cognitive processes onto computers and our bodies. We used hydrological simulations and statistics to quantitatively assess spatial performance. We found that Tangible Landscape enhanced 3D spatial performance and helped users understand water flow. 
 }
 
 \keywords{Embodied cognition, spatial thinking, physical processes, water flow, hydrology, tangible user interfaces, user experiment, 3D}
@@ -69,18 +69,19 @@ We ran a flow modeling experiment to test whether tangible interfaces like this 
 
 \subsection{Understanding physical processes}
 % the challenges of understanding physical processes
-Physical processes like the flow and dispersion of water are challenging to understand because they unfold in time and space, are controlled by their context, and are driven by forces like gravity and momentum. The flow of water across a landscape is controlled by the morphological shape and gradient of the topography. It is challenging to understand how water will flow across a landscape because one must not only understand how the shape and gradient of the terrain control the flow and dispersion of water locally, but also how water will flow between shapes and gradients – how the morphology is topologically connected. Understanding a physical process requires thinking at and across multiple spatial scales simultaneously. 
+Physical processes like the flow and dispersion of water are challenging to understand because they unfold in time and space, are controlled by their context, and are driven by forces like gravity and momentum. The flow of water across a landscape is controlled by the morphological shape and gradient of the topography. It is challenging to understand how water will flow across a landscape because one must not only understand how the shape and gradient of the terrain control the flow and dispersion of water locally, but also how water will flow between shapes and gradients -- how the morphology is topologically connected. Understanding a physical process requires thinking at and across multiple spatial scales simultaneously. 
 
 % computational modeling in GIS
 This cognitive work can be offloaded onto computers through 3D geospatial modeling, analysis, and simulation. Interacting with computers, however, can also be challenging requiring training and highly abstract thinking that adds a new cognitive burden.
 
 \subsection{Tangible interfaces for GIS}
 %
-Tangible interfaces are designed to make interaction with computers easier, more natural
+Tangible interfaces are designed to make interaction with computers easier and more natural
 by physically manifesting digital data so that users can cognitively grasp it as an extension of their bodies, offloading cognition onto their bodies. 
 %
 In embodied cognition higher cognitive processes are built upon and grounded in sensorimotor processes -- upon bodily action, perception, and experience -- 
-so thinking can performed subconsciously through action and extended with tools (such as computers) \cite{Kirsh2013}.
+so thinking can performed subconsciously through action and extended with tools 
+(such as pens and even computers) \cite{Kirsh2013}.
 %
 Tangible interfaces have been developed for geographic information systems (GIS) to ease the cognitive burden of complex spatial reasoning, spatial visualization, and human-computer interaction. 
 %
@@ -145,7 +146,7 @@ of observation, hypothesis generation and testing, and inference.
 \end{figure}
 
 \subsection{Cognitively grasping spatial processes}
-The aim of this study is to study how tangible interfaces for GIS 
+The aim of this research was to study how tangible interfaces for GIS 
 mediate spatial thinking about landscape processes like water flow. 
 Theoretically a tangible interface for a GIS that enables intuitive digital sculpting while providing analytical %or simulated 
 feedback should allow users to dynamically explore how topographic form influences landscape processes. 
@@ -167,9 +168,8 @@ mediated spatial performance in a water flow modeling experiment.
 We conducted a terrain and water flow modeling experiment 
 in which participants tried to recreate a given landscape. 
 %
-We quantitatively assessed their spatial performance using hydrological simulation and spatial statistics.
+We quantitatively assessed their spatial performance using hydrological simulation, summary statistics, and cell-by-cell statistics.
 %and qualitatively assessed their modeling process through observation and semi-structured interviews. 
-
 
 \subsection{Flow modeling experiment}
 %
@@ -177,10 +177,11 @@ In the experiment 11 participants were asked to sculpt a given landscape using d
 first using Vue, a triangulated irregular network based 3D modeling program designed for intuitive terrain sculpting, 
 and then using Tangible Landscape. 
 %
-The participants are asked to model a real landscape --
+The participants were asked to model a real landscape --
 a region of Lake Raleigh Woods 
 in Raleigh, North Carolina  -- 
-from a flat surface using each technology. 
+%from a flat surface 
+using each technology. 
 %We used a real landscape because 
 %computer generated landscapes look surreal, may lack distinct landforms, and may not form clear stream channels. 
 We selected a region of the landscape with distinctive, 
@@ -193,13 +194,13 @@ The digital elevation model (DEM) for this region was interpolated from a 2013 a
 %\end{enumerate*}
 
 In the \nth{1} exercise 
-each participant had 10 minutes to digitally sculpt the topography of the given landscape in Vue's terrain editor
+each participant had 10 minutes to digitally sculpt the topography of the study landscape in Vue's terrain editor
 using a physical model as a reference (see Fig.~\ref{fig:exercises}a).
 %(Figure~\ref{fig:exercise_7}).
 Participants were given a 2 minute introduction to terrain sculpting in Vue and then 10 minutes to experiment and become familiar with the interface before beginning the exercise. Vue's terrain editor was designed to emulate sculpting by hand -- there are tool brushes that are analogous to basic actions in sculpture including pushing, pulling, and smoothing. 
 
 In the \nth{2} exercise each participant had ten minutes to  
-sculpt the given landscape in polymeric sand
+sculpt the study landscape in polymeric sand
 using Tangible Landscape's water flow simulation
 %over the scanned landscape
 as a guide (see Fig.~\ref{fig:exercises}b). 
@@ -222,7 +223,7 @@ As participants sculpted they could switch between projected maps of either the
 \begin{center}
 \subfigure[]{\includegraphics[height=150px]{figures/vue.jpg}}\hspace{1em}%
 \subfigure[]{\includegraphics[height=150px]{figures/tl_water.jpg}}
-\caption{(a) Digitally sculpting with Vue in the \nth{1} exercise and (b) tangibly sculpting in the \nth{2} exercise}
+\caption{(a) Digitally sculpting with Vue in the \nth{1} exercise and (b) tangibly sculpting with Tangible Landscape in the \nth{2} exercise}
 \label{fig:exercises}
 \end{center}
 \end{figure*}
@@ -299,7 +300,8 @@ All of the point clouds were randomly resampled and interpolated as DEMs using t
 For each model we simulated shallow overland water flow, identified depressions,
 and computed the difference between the modeled and reference water flow depth. 
 To compute the difference we subtracted the modeled values from the initial, reference values. %(difference $=$ before $-$ after). 
-We identified and computed the depth of depressions by generating a depressionless DEM and then calculating the difference by subtracting the DEM from the depressionless DEM.
+We identified and computed the depth of depressions by generating a depressionless DEM and then calculating the difference between the DEM from the depressionless DEM.
+%subtracting the DEM from the depressionless DEM.
 Then we computed the mean, sum, and maximum of the water depths, the depressions, and the difference in water depths for each exercise in the experiment. 
 We visually assessed the spatial pattern of water flow and continuity using these maps. 
 %
@@ -354,18 +356,18 @@ open source 3D modeling programs like Blender (\url{https://www.blender.org/}) c
 
 \section{Results}\label{sec:results}
 %
-The models sculpted with Tangible Landscape more accurately replicated the water flow of the given landscape. 
+The models sculpted with Tangible Landscape more accurately replicated the flow of water over the study landscape. 
 %
 The digitally sculpted models tended to have 
 more diffuse water flow
 and more water pooling in depressions, whereas 
 %
-the models sculpted with Tangible Landscape tended to have 
+the tangibly sculpted models tended to have 
 more concentrated flow in stream channels
 and less pooling in depressions.
 %
 Furthermore, 
-the spatial distribution of water flow on the models sculpted with Tangible Landscape 
+the spatial distribution of water flow on the tangibly sculpted models 
 more closely fit the distribution of water flow on the reference landscape. 
 
 % water depth table
@@ -447,11 +449,11 @@ Tangible & 17.66\%\\
 \end{figure}
 
 % concentrated flow
-The models sculpted with Tangible Landscape had higher 
-mean water depths, 
-maximum water depths, and 
+The models sculpted with Tangible Landscape 
+had more concentrated flow in stream channels
+with higher 
+mean, maximum, and 
 summed water depths
-demonstrating more concentrated flow
 (see Table~\ref{table:water_depth}).
 %
 % concentrated in stream channels
@@ -462,18 +464,25 @@ in the upper stream channel,
 the lower stream channel, 
 and the nascent swale to the right.
 
+% water flow fitting
 Furthermore the water flow across models sculpted with Tangible Landscape fit the reference more closely.
 Fig.~\ref{fig:mean_diff} and the details in Fig.~\ref{fig:detail_diff} 
 show that water flow in the \nth{1} exercise was more spatially diffuse and dispersed, 
-whereas water flow in the \nth{2} exercise fit the reference flow better.
-
-% water flow fitting
-Fig.~\ref{fig:distance_1}~-~\ref{fig:distance_2} show the how well the flow of the digitally and tangible sculpted models fit the reference flow. 
+whereas water flow in the \nth{2} exercise was a better fit. %fit the reference flow better.
+%
+Fig.~\ref{fig:distance_1}~-~\ref{fig:distance_2} 
+%compare the spatial configuration of concentrated flow to 
+show the how well the flow of the digitally and tangibly sculpted models fit the reference flow. 
 %
 The digitally sculpted models tended to loosely fit the upper stream with fewer, more dispersed clusters of concentrated flow at further distances from the reference on average. They also tended to have very few clusters at considerable distance from the swale on the right and small, dispersed clusters that tightly fit the lower stream. 
 %
 The tangibly sculpted models, however, tended to more densely, tightly fit the upper stream and the swale on the right. 
-While the tangibly sculpted models tended to miss or misplace the lower stream channel (siting it too far southeast), overall they fit the reference flow 8.32\% better than the digitally sculpted models (see Table~\ref{table:distance}).
+The tangibly sculpted models tended to miss or misplace the lower stream channel (siting it too far southeast). 
+The near-real time water flow analytic was not very useful for modeling the lower stream segment because there was not enough contributing area on the model to generate much concentrated flow. 
+Water flow over the sculpted models was only computed over the model, 
+whereas the reference water flow was computed over the entire watershed. 
+%
+Overall the tangibly sculpted models fit the reference flow 8.32\% better than the digitally sculpted models (see Table~\ref{table:distance}).
 
 % depressions
 The digitally sculpted models had higher max and summed 
@@ -489,24 +498,25 @@ reveals disrupted flows with broken continuity where water should be flowing.
 
 \section{Discussion}\label{sec:discussion}
 %
-The modeling results show that participants did not initially understand how water flows, but learned more with the aid of the tangible interface.
+The modeling results show that participants tended not to clearly understand how 
+topography directs water flow, but began to learn about the importance of curvature and continuity with the aid of the tangible interface. 
 
 % digital results
 When digitally sculpting 
-participants focused on making the streams lower than the surrounding topography, 
-but did not tend to focus on draining water into the streams or 
+participants typically focused on making the streams lower than the surrounding topography, 
+but not on draining water into the streams or 
 directing a continuous flow downstream.
 %
-In the \nth{1} exercise participants made low points where the streams should be,
+In the \nth{1} exercise participants made low points approximately where the streams should be,
 but tended not to grade smooth slopes with appropriate curvature. 
 %
-The participants use of concave rather than convex morphology on the central ridge reveals that they did not understand how topographic curvature controls water flow.
+The participants use of concave rather than convex morphology on the central ridge reveals that some did not understand how topographic curvature controls water flow.
 %
 The extensive depressions distributed widely across the terrain
-demonstrate that participants did not understand the importance of topographic curvature and continuity for water flow. 
+demonstrate that participants tended not understand the importance of topographic curvature and continuity for water flow. 
 
 % tangible results
-With the tangible interface they focused on directing water into streams,
+With the tangible interface they typically focused on directing water into streams,
 but did not tend focus on directing a continuous flow downstream.
 %
 In the \nth{2} exercise participants tended to grade 
@@ -530,10 +540,10 @@ The substantial improvement in participants' performance in the \nth{2} exercise
 shows that they successfully integrated the tangible interface's water flow analytic 
 into their modeling process. 
 %
-To improve their performance they must have been able to successfully manage the added cognitive load of the analytical feedback. 
+To improve their performance they must have been able to successfully manage 
+the added cognitive load of the analytical feedback. 
 %
-The tangibility of the interface may have let them offload some of the cognitive work of sensing and shaping 3D form onto their bodies
-so that they could focus on water flow. 
+The tangibility of the interface may have let them offload some of the cognitive work of sensing and shaping 3D form onto their bodies so that they could focus on water flow. 
 
 % emotions
 While their performance did improve in the \nth{2} exercise, it may still have been adversely affected by emotions like frustration. 
@@ -545,19 +555,18 @@ they might become frustrated and demotivated.
 Future research should investigate the role of affect, motivation, and metacognition in tangible interaction.
 
 % more analytics
-More analytics may enhance participants understanding of water flow dynamics and stream morphology. 
+More analytics may enhance participants understanding of water flow and stream morphology. 
 %
-Identifying and computing the depth of depressions highlights the role of curvature and continuity in water flow dynamics. 
+Identifying and computing the depth of depressions highlighted the role of topographic curvature and continuity in water flow. 
 %
 While topographic parameters such as curvature and slope would highlight important aspects of the morphology, 
-an additional step of reasoning is required to link these parameters to water flow. 
+an additional step of reasoning and imagination is required to link these parameters to water flow. 
 %
-The ponding of water in depressions links topographic controls and water flow 
+The ponding of water in depressions directly links topographic controls and water flow 
 and thus should be a more intuitive analytic. 
 %
 We propose combining shallow overland water flow with ponding in depressions
-as a near real-time analytic
-for elucidating water flow dynamics. 
+as an analytic to help users understand how water flows. 
 
 \section{Conclusion}\label{sec:conclusion}
 %
