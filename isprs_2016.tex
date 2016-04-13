@@ -26,6 +26,7 @@ urlcolor=gray
 \usepackage[super]{nth}
 \usepackage[inline]{enumitem}
 \usepackage{moreenum}
+\usepackage{booktabs}
 \begin{document}
 
 \title{Tangible Landscape: Cognitively grasping the flow of water}
@@ -375,12 +376,14 @@ more closely fit the distribution of water flow on the reference landscape.
 \caption{Highest mean, maximum, and summed water depths (ft)}
 \vspace*{0.5em}
 \centering
-\begin{tabular}{c | c c c}
+\begin{tabular}{c c c c}
+\toprule
 Exercise & Mean & Max & Sum\\
-\hline
+\midrule
 Reference & 0.48 & 0.01 & 786.25\\
 Digital & 0.21 & 1.83 & 3.60\\
 Tangible & 0.27 & 2.31 & 4.60\\ 
+\bottomrule
 \end{tabular}
 \label{table:water_depth} 
 \end{table}
@@ -391,11 +394,13 @@ Tangible & 0.27 & 2.31 & 4.60\\
 %\caption{The mean and sum of the minimum distance  from cells with concentrated flow in the reference water depth to cells with concentrated flow in the mean water depth for each experiment (ft)} 
 \vspace*{0.5em}
 \centering
-\begin{tabular}{c | c c}
+\begin{tabular}{c c c}
+\toprule
 Exercise & Mean & Sum\\
-\hline
+\midrule
 Digital & 21.13 & 29244\\
 Tangible & 18.59 & 25724\\ 
+\bottomrule
 \end{tabular}
 \label{table:distance} 
 \end{table}
@@ -405,12 +410,14 @@ Tangible & 18.59 & 25724\\
 \caption{Highest max and summed depth of depressions (ft)}
 \vspace*{0.5em}
 \centering
-\begin{tabular}{c | c c}
+\begin{tabular}{c c c}
+\toprule
 Exercise & Max & Sum \\
-\hline
+\midrule
 Reference & 0.10 & 0.62\\
 Digital & 24.5 & 53\\
 Tangible & 22.2 & 44\\ 
+\bottomrule
 \end{tabular}
 \label{table:depressions} 
 \end{table}
@@ -420,12 +427,14 @@ Tangible & 22.2 & 44\\
 \caption{Percent of cells with depressions (3 ft \textsuperscript{2})} 
 \vspace*{0.5em}
 \centering
-\begin{tabular}{c | c}
+\begin{tabular}{c c}
+\toprule
 Exercise & Cells\\
-\hline
+\midrule
 Reference & 0.00\%\\
 Digital & 44.00\%\\
 Tangible & 17.66\%\\ 
+\bottomrule
 \end{tabular}
 \label{table:cells} 
 \end{table}
