@@ -51,7 +51,7 @@ urlcolor=gray
 \abstract
 {
 Complex spatial forms like topography can be challenging to understand, much less intentionally shape, given the heavy cognitive load of visualizing and manipulating 3D form. Spatiotemporal processes like the flow of water over a landscape are even more challenging to understand and intentionally direct as they are dependent upon their context and require the simulation of forces like gravity and momentum. This cognitive work can be offloaded onto computers through 3D geospatial modeling, analysis, and simulation.
-Interacting with computers, however, can also be challenging, often requiring training and highly abstract thinking. Tangible computing -- an emerging paradigm of human-computer interaction in which data is physically manifested so that users can feel it and directly manipulate it -- aims to offload this added cognitive work onto the body. We have designed Tangible Landscape, a tangible interface powered by an open source geographic information system (GRASS GIS), so that users can naturally shape topography and interact with simulated processes with their hands in order to make observations, generate and test hypotheses, and make inferences about scientific phenomena in a rapid, iterative process. Conceptually Tangible Landscape couples a malleable physical model with a digital model of a landscape through an continuous cycle of 3D scanning, geospatial modeling, and projection. 
+Interacting with computers, however, can also be challenging, often requiring training and highly abstract thinking. Tangible computing -- an emerging paradigm of human-computer interaction in which data is physically manifested so that users can feel it and directly manipulate it -- aims to offload this added cognitive work onto the body. We have designed Tangible Landscape, a tangible interface powered by an open source geographic information system (GRASS GIS), so that users can naturally shape topography and interact with simulated processes with their hands in order to make observations, generate and test hypotheses, and make inferences about scientific phenomena in a rapid, iterative process. Conceptually Tangible Landscape couples a malleable physical model with a digital model of a landscape through a continuous cycle of 3D scanning, geospatial modeling, and projection. 
 We ran a flow modeling experiment to test whether tangible interfaces like this can effectively enhance spatial performance by offloading cognitive processes onto computers and our bodies. We used hydrological simulations and statistics to quantitatively assess spatial performance. We found that Tangible Landscape enhanced 3D spatial performance and helped users understand water flow. 
 }
 
@@ -377,8 +377,6 @@ more closely fit the distribution of water flow on the reference landscape.
 
 % water depth table
 \begin{table}[h!]
-\caption{Highest mean, maximum, and summed water depths (ft)}
-\vspace*{0.5em}
 \centering
 \begin{tabular}{c c c c}
 \toprule
@@ -389,14 +387,13 @@ Digital & 0.21 & 1.83 & 3.60\\
 Tangible & 0.27 & 2.31 & 4.60\\ 
 \bottomrule
 \end{tabular}
+\vspace*{0.5em}
+\caption{Highest mean, maximum, and summed water depths (ft)}
 \label{table:water_depth} 
 \end{table}
 
 % difference / distance
 \begin{table}[h!]
-\caption{The minimum distances from reference stream cells to the nearest modeled cell with concentrated flow (ft)} 
-%\caption{The mean and sum of the minimum distance  from cells with concentrated flow in the reference water depth to cells with concentrated flow in the mean water depth for each experiment (ft)} 
-\vspace*{0.5em}
 \centering
 \begin{tabular}{c c c}
 \toprule
@@ -406,13 +403,14 @@ Digital & 21.13 & 29244\\
 Tangible & 18.59 & 25724\\ 
 \bottomrule
 \end{tabular}
+\vspace*{0.5em}
+\caption{The minimum distances from reference stream cells to the nearest modeled cell with concentrated flow (ft)} 
+%\caption{The mean and sum of the minimum distance  from cells with concentrated flow in the reference water depth to cells with concentrated flow in the mean water depth for each experiment (ft)} 
 \label{table:distance} 
 \end{table}
 
 % depressions table
 \begin{table}[h!]
-\caption{Highest max and summed depth of depressions (ft)}
-\vspace*{0.5em}
 \centering
 \begin{tabular}{c c c}
 \toprule
@@ -423,13 +421,13 @@ Digital & 24.5 & 53\\
 Tangible & 22.2 & 44\\ 
 \bottomrule
 \end{tabular}
+\vspace*{0.5em}
+\caption{Highest max and summed depth of depressions (ft)}
 \label{table:depressions} 
 \end{table}
 
 % cells with depressions table
 \begin{table}[h!]
-\caption{Percent of cells with depressions (3 ft \textsuperscript{2})} 
-\vspace*{0.5em}
 \centering
 \begin{tabular}{c c}
 \toprule
@@ -440,6 +438,8 @@ Digital & 44.00\%\\
 Tangible & 17.66\%\\ 
 \bottomrule
 \end{tabular}
+\vspace*{0.5em}
+\caption{Percent of cells with depressions (3 ft \textsuperscript{2})} 
 \label{table:cells} 
 \end{table}
 
@@ -485,7 +485,7 @@ whereas water flow in the \nth{2} exercise was a better fit. %fit the reference 
 %
 Fig.~\ref{fig:distance_1}~-~\ref{fig:distance_2} 
 %compare the spatial configuration of concentrated flow to 
-show the how well the flow of the digitally and tangibly sculpted models fit the reference flow. 
+show how well the flow of the digitally and tangibly sculpted models fit the reference flow. 
 %
 The digitally sculpted models tended to loosely fit the upper stream with fewer, more dispersed clusters of concentrated flow at further distances from the reference on average. They also tended to have very few clusters at considerable distance from the swale on the right and small, dispersed clusters that tightly fit the lower stream. 
 %
