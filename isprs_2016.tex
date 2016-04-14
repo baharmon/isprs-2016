@@ -27,6 +27,9 @@ urlcolor=gray
 \usepackage[inline]{enumitem}
 \usepackage{moreenum}
 \usepackage{booktabs}
+\newcommand{\urlhttp}[1]{\href{http://#1}{\nolinkurl{#1}}}
+\newcommand{\urlhttps}[1]{\href{https://#1}{\nolinkurl{#1}}}
+
 \begin{document}
 
 \title{Tangible Landscape: Cognitively grasping the flow of water}
@@ -43,7 +46,7 @@ urlcolor=gray
 \commission{}{} %This field is optional.
 \workinggroup{} %This field is optional.
 \icwg{}   %This field is optional.
-\ths{16} %ThS16
+\ths{16 - Perceptual and cognitive experiments with imagery and 3D models}
 
 \abstract
 {
@@ -52,7 +55,7 @@ Interacting with computers, however, can also be challenging, often requiring tr
 We ran a flow modeling experiment to test whether tangible interfaces like this can effectively enhance spatial performance by offloading cognitive processes onto computers and our bodies. We used hydrological simulations and statistics to quantitatively assess spatial performance. We found that Tangible Landscape enhanced 3D spatial performance and helped users understand water flow. 
 }
 
-\keywords{Embodied cognition, spatial thinking, physical processes, water flow, hydrology, tangible user interfaces, user experiment, 3D}
+\keywords{embodied cognition, spatial thinking, physical processes, water flow, hydrology, tangible user interfaces, user experiment, 3D}
 
 \maketitle
 
@@ -330,7 +333,8 @@ replicate or build upon this experiment by
 using or adapting our tangible interface, experimental methodology, code, and data. 
 %
 The python scripts for data processing and analysis used in this experiment 
-are available on GitHub at \url{https://github.com/baharmon/tangible-water-flow}
+are available on GitHub at 
+\urlhttps{https://github.com/baharmon/tangible-water-flow}
 released under the GNU General Public License (GPL). 
 %
 See the documentation in the GitHub repository for detailed instructions for replicating this experiment. 
@@ -338,11 +342,11 @@ See the documentation in the GitHub repository for detailed instructions for rep
 The data used in this experiment are available on the Open Science Framework at \url{osf.io/zv3t6} under the Creative Commons Zero license.
 
 GRASS GIS is available at
-\url{https://grass.osgeo.org/} 
+\urlhttps{https://grass.osgeo.org/} 
 under the GNU GPL. 
 %
 Tangible Landscape is available at
-\url{https://github.com/ncsu-osgeorel/grass-tangible-landscape}
+\urlhttps{https://github.com/ncsu-osgeorel/grass-tangible-landscape} \\
 under the GNU GPL. 
 %
 To build your own Tangible Landscape
@@ -350,9 +354,9 @@ see the documentation in the GitHub repository
 and refer to the book Tangible Modeling with Open Source GIS \cite{Petrasova2015}.
 
 While the rest of the software used in this research is free and open source, 
-Vue (\url{http://www.e-onsoftware.com/products/vue/}) is proprietary software. 
+Vue \footnote{\urlhttp{http://www.e-onsoftware.com/products/vue/}} is proprietary software. 
 We used Vue's terrain editor for this study because it was designed specifically for intuitive terrain modeling, but 
-open source 3D modeling programs like Blender (\url{https://www.blender.org/}) could be substituted for Vue. 
+open source 3D modeling programs like Blender \footnote{\urlhttps{https://www.blender.org/}} could be substituted for Vue. 
 %
 
 \section{Results}\label{sec:results}
