@@ -59,7 +59,7 @@ We ran a flow modeling experiment to test whether tangible interfaces like this 
 
 \maketitle
 
-\begin{figure*}[ht!]
+\begin{figure*}[h!]
 \begin{center}
 		\includegraphics[width=0.33\textwidth]{figures/tl_sequence_1.jpg}
 		\includegraphics[width=0.33\textwidth]{figures/tl_sequence_2.jpg}
@@ -76,7 +76,7 @@ We ran a flow modeling experiment to test whether tangible interfaces like this 
 Physical processes like the flow and dispersion of water are challenging to understand because they unfold in time and space, are controlled by their context, and are driven by forces like gravity and momentum. The flow of water across a landscape is controlled by the morphological shape and gradient of the topography. It is challenging to understand how water will flow across a landscape because one must not only understand how the shape and gradient of the terrain control the flow and dispersion of water locally, but also how water will flow between shapes and gradients -- how the morphology is topologically connected. Understanding a physical process requires thinking at and across multiple spatial scales simultaneously. 
 
 % computational modeling in GIS
-This cognitive work can be offloaded onto computers through 3D geospatial modeling, analysis, and simulation. Interacting with computers, however, can also be challenging requiring training and highly abstract thinking that adds a new cognitive burden.
+This cognitive work can be offloaded onto computers through 3D geospatial modeling, analysis, and simulation. Interacting with computers, however, can also be challenging, requiring training and highly abstract thinking that adds a new cognitive burden.
 
 \subsection{Tangible interfaces for GIS}
 %
@@ -84,10 +84,11 @@ Tangible interfaces are designed to make interaction with computers easier and m
 by physically manifesting digital data so that users can cognitively grasp it as an extension of their bodies, offloading cognition onto their bodies. 
 %
 In embodied cognition higher cognitive processes are built upon and grounded in sensorimotor processes -- upon bodily action, perception, and experience -- 
-so thinking can performed subconsciously through action and extended with tools 
-(such as pens and even computers) \cite{Kirsh2013}.
+so thinking can be performed subconsciously through action and extended with tools 
+%(such as hammers and even computers) 
+\cite{Kirsh2013}. %\cite{Maravita2004}
 %
-Tangible interfaces have been developed for geographic information systems (GIS) to ease the cognitive burden of complex spatial reasoning, spatial visualization, and human-computer interaction. 
+Tangible interfaces have been developed for geographic information systems (GIS) to ease the cognitive burden of complex spatial reasoning, spatial visualization, and human-computer interaction by embodying these processes. 
 %
 Theoretically tangible interfaces for GIS should help users understand environmental processes
 by giving multidimensional geospatial data an interactive, physical form 
@@ -160,7 +161,7 @@ offloading the cognitive work of
 understanding and shaping topographic form onto the body. 
 A GIS can offload the cognitive work of simulating complex physical processes
 like the flow of water through computation. 
-By combining these physical and computational affordances in a tangible interface for GIS we should be able to more easily understand and shape spatial processes. 
+With these physical and computational affordances combined in a tangible interface for GIS users should be able to more easily understand and shape spatial processes. 
 %In order to critique the theory of tangibles, identify cognitive challenges, and improve the design of tangibles...
 We empirically tested how a tangible interface for GIS 
 mediated spatial performance in a water flow modeling experiment. 
@@ -191,7 +192,7 @@ using each technology.
 We selected a region of the landscape with distinctive, 
 clearly defined landforms -- a central ridge flanked by two stream valleys 
 (see Fig.~\ref{fig:study_area}). 
-The digital elevation model (DEM) for this region was interpolated from a 2013 airborne lidar survey using the regularized spline with tension method.
+The digital elevation model (DEM) for this region was derived from a 2013 airborne lidar survey using the regularized spline with tension interpolation method.
 
 %\begin{enumerate*}[label=\raisenth*] 
 %\item ...
@@ -204,7 +205,7 @@ using a physical model as a reference (see Fig.~\ref{fig:exercises}a).
 Participants were given a 2 minute introduction to terrain sculpting in Vue and then 10 minutes to experiment and become familiar with the interface before beginning the exercise. Vue's terrain editor was designed to emulate sculpting by hand -- there are tool brushes that are analogous to basic actions in sculpture including pushing, pulling, and smoothing. 
 
 In the \nth{2} exercise each participant had ten minutes to  
-sculpt the study landscape in polymeric sand
+sculpt the study landscape in polymer enriched sand
 using Tangible Landscape's water flow simulation
 %over the scanned landscape
 as a guide (see Fig.~\ref{fig:exercises}b). 
@@ -382,7 +383,7 @@ more closely fit the distribution of water flow on the reference landscape.
 \toprule
 Exercise & Mean & Max & Sum\\
 \midrule
-Reference & 0.48 & 0.01 & 786.25\\
+Reference & 0.01 & 0.47 & 786.25\\
 Digital & 0.21 & 1.83 & 3.60\\
 Tangible & 0.27 & 2.31 & 4.60\\ 
 \bottomrule
@@ -433,8 +434,8 @@ Tangible & 22.2 & 44\\
 \toprule
 Exercise & Cells\\
 \midrule
-Reference & 0.00\%\\
-Digital & 44.00\%\\
+Reference & 0\%\\
+Digital & 44\%\\
 Tangible & 17.66\%\\ 
 \bottomrule
 \end{tabular}
@@ -478,7 +479,7 @@ the lower stream channel,
 and the nascent swale to the right.
 
 % water flow fitting
-Furthermore the water flow across models sculpted with Tangible Landscape fit the reference more closely.
+Furthermore the water flow across models sculpted with Tangible Landscape more closely fit the reference.
 Fig.~\ref{fig:mean_diff} and the details in Fig.~\ref{fig:detail_diff} 
 show that water flow in the \nth{1} exercise was more spatially diffuse and dispersed, 
 whereas water flow in the \nth{2} exercise was a better fit. %fit the reference flow better.
@@ -568,7 +569,7 @@ they might become frustrated and demotivated.
 Future research should investigate the role of affect, motivation, and metacognition in tangible interaction.
 
 % more analytics
-More analytics may enhance participants understanding of water flow and stream morphology. 
+More analytics may enhance participants' understanding of water flow and stream morphology. 
 %
 Identifying and computing the depth of depressions highlighted the role of topographic curvature and continuity in water flow. 
 %
@@ -592,7 +593,7 @@ about the way that water flows over topography.
 As one participant said, `seeing the flow takes away the mystery of topography.' 
 %
 Physically manifesting topographic data enables users to cognitively grasp the terrain. 
-Coupling the tangible topography with the simulated flow of water 
+Coupling tangible topography with the simulated flow of water 
 lets users understand the simulation with their body. 
 %-- partially embodying cognition about water flow. 
 
@@ -629,7 +630,7 @@ lets users understand the simulation with their body.
 \subfigure[]{\includegraphics[width=0.3\textwidth]{figures/depressions.png}}
 \subfigure[]{\includegraphics[width=0.3\textwidth]{figures/max_depressions_1.png}}
 \subfigure[]{\includegraphics[width=0.3\textwidth]{figures/max_depressions_2.png}}
-\caption{(a) The depth of depression in the reference landscape, (b) the maximum depth of depressions using digital modeling, (c) and the maximum depth of depressions using tangible modeling}
+\caption{(a) The depth of depressions in the reference landscape, (b) the maximum depth of depressions using digital modeling, (c) and the maximum depth of depressions using tangible modeling}
 \label{fig:max_depressions}
 \end{center}
 \end{figure*}
@@ -684,7 +685,7 @@ lets users understand the simulation with their body.
 \begin{center}
 \includegraphics[width=0.9\textwidth]{figures/concentrated_flow_1.png}
 \caption{
-The lines represent the minimum distance between blue points with high concentrated flow in the reference to red points with high concentrated flow from the mean depth of digitally sculpted models.}
+The lines represent the minimum distance between blue points with high concentrated flow from the reference and red points with high concentrated flow from the mean depth of digitally sculpted models}
 \label{fig:distance_1}
 \end{center}
 \end{figure*}
@@ -693,7 +694,7 @@ The lines represent the minimum distance between blue points with high concentra
 \begin{center}
 \includegraphics[width=0.9\textwidth]{figures/concentrated_flow_2.png}
 \caption{
-The lines represent the minimum distance between blue points with high concentrated flow in the reference to red points with high concentrated flow from the mean depth of tangibly sculpted models.}
+The lines represent the minimum distance between blue points with high concentrated flow from the reference and red points with high concentrated flow from the mean depth of tangibly sculpted models}
 \label{fig:distance_2}
 \end{center}
 \end{figure*}
