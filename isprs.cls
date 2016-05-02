@@ -24,7 +24,6 @@
 \def\commissionname{\bf{Commission}}
 \def\workinggroupname{\bf{WG}}
 \def\icwgname{\bf{ICWG}}
-\def\thsname{\bf{ThS}}
 \def\keywordsname{Key Words}
 
 
@@ -311,8 +310,14 @@
 
 
 \def\thepart{\Roman{part}}
-\def\thesection{\arabic{section}.}  %\def\thesection{\arabic{section}} 14-02-28 Markus Englich
-\def\thesubsection{\thesection\arabic{subsection}}  %\def\thesubsection{\thesection.\arabic{subsection}} 14-02-28 Markus Englich
+% \def\thesection{\arabic{section}.}  %\def\thesection{\arabic{section}} 14-02-28 Markus Englich
+
+\RequirePackage{titlesec} % 2016-01-09 Filip Biljecki
+\titleformat{\section}
+    {\centering\bfseries}{\thesection.}{0.85em}{\normalsize\bf\uppercase}{}
+\def\thesection{\arabic{section}}
+\def\thesubsection{\thesection.\arabic{subsection}} % 2016-01-09 Filip Biljecki
+% \def\thesubsection{\thesection\arabic{subsection}}  %\def\thesubsection{\thesection.\arabic{subsection}} 14-02-28 Markus Englich
 \def\thesubsubsection{\thesubsection .\arabic{subsubsection}}  
 \def\theparagraph{\thesubsubsection.\arabic{paragraph}}
 \def\thesubparagraph{\theparagraph.\arabic{subparagraph}}
@@ -474,7 +479,7 @@
    \vskip 4\p@
    \setbox\@tempboxa\hbox{#1: #2}%
    \ifdim \wd\@tempboxa >\hsize
-       #1: #2\par
+       #1: \centering#2\par
      \else
        \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
    \fi}
@@ -548,9 +553,6 @@
     \ifx\@empty\@icwg\else%
       \icwgname\ \@icwg%
     \fi%
-    \ifx\@empty\@ths\else%
-      \thsname\ \@ths%
-    \fi%
 %    \fi%
   }%
  \end{center}%
@@ -610,8 +612,6 @@
 \newcommand{\address}[1]{\gdef\@address{#1}}
 \newcommand{\workinggroup}[1]{\gdef\@workinggroup{#1}}
 \newcommand{\icwg}[1]{\gdef\@icwg{#1}}
-\newcommand{\ths}[1]{\gdef\@ths{#1}}
-
 
 \newcommand{\isprsvol}[1]{\gdef\@isprsvol{#1}}
 \newcommand{\@isprsvol}{\@latex@warning@no@line{No \noexpand\isprsvol
